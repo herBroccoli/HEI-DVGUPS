@@ -1,22 +1,19 @@
 import { useState } from 'react'
+import mainImg from "../../assets/il1.png"
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className='flex'>
+        <img src={mainImg} alt="main" />
+        <div className='w-[450px] ml-[30px] text-[#707070]'>
+          <p className='text-[18px]'>
+          <span className='font-bold text-[24px]'>Электронная информационно-образовательная среда</span> - дистанционное обучение по всем направлениям
+          </p>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
