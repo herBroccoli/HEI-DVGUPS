@@ -1,0 +1,16 @@
+root = true
+[*]
+end_of_line = lf
+charset = utf-8
+
+[src/**.{js, ts, jsx, tsx}]
+indent_size = 4
+indent_style = tab
+
+[src/**.{css, sass, scss}]
+indent_size = 2
+indent_style = space
+
+[*.{yaml, ymlx, yml}]
+indent_size = 2
+indent_style = space
