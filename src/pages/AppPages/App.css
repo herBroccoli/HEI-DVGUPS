@@ -41,3 +41,9 @@
   color: #888;
 }
  */
+
+[class^="benefit"] {
+  width: 355px;
+  word-break: break-all;
+  color: #707070;
+}

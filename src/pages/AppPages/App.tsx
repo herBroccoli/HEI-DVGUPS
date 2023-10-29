@@ -1,6 +1,11 @@
+import "./App.css"
 import Button from "../../UI/Button"
 import mainImg from "../../assets/il1.png"
 import main2Img from "../../assets/il2.png"
+import { LoginNext, RegisterNext } from "../../features/AuthHref"
+import benefit1Img from "../../assets/11.png"
+import benefit2Img from "../../assets/22.png"
+import benefit3Img from "../../assets/33.png"
 
 function App() {
 	return (
@@ -18,13 +23,13 @@ function App() {
 						Чтобы пройти повышение квалификации или получить дополнительное образование пройдите регистрацию, если вы у нас впервые
 					</div>
 
-					<Button className={'p-4 mt-2'} text="Стать студентом" />
+					<Button fuc={RegisterNext} className={'p-4 mt-2'} text="Стать студентом" />
 
 					<div className="mt-6">
 						Если у вас уже есть Личный кабинет
 					</div>
 
-					<Button className={'p-4 mt-2'} text="Войти в кабинет" />
+					<Button fuc={LoginNext} className={'p-4 mt-2'} text="Войти в кабинет" />
 				</div>
 			</div>
 
@@ -37,6 +42,36 @@ function App() {
 						комплекс, содержащий сборники теоретических и справочных
 						материалов, тесты, задания и иную информацию согласно
 						программам обучения.
+					</div>
+				</div>
+			</div>
+
+			<div className="flex items-start mt-[80px] justify-between">
+				<div className="benefit1">
+					<img src={benefit1Img} />
+					<div className="border-l-[3px] min-h-[168px] border-l-[#329f42] flex items-start p-[20px] text-[17px]">
+						<div className="stud"></div>
+						<div>
+							Каждый студент получает свою программу обучения и проходит ее с собственной скоростью. Программа создается преподавателями, либо самостоятельно.
+						</div>
+					</div>
+				</div>
+				<div className="benefit2">
+					<img src={benefit2Img} />
+					<div className="border-l-[3px] min-h-[168px] border-l-[#329f42] flex itemsstartr p-[20px] text-[17px]">
+						<div className="stud"></div>
+						<div>
+							Студенты могут видеть общий план прохождения дисциплин, а также свое отставание или опережение плана.
+						</div>
+					</div>
+				</div>
+				<div className="benefit3">
+					<img src={benefit3Img} />
+					<div className="border-l-[3px] min-h-[168px] border-l-[#329f42] flex items-start p-[20px] text-[17px]">
+						<div className="stud"></div>
+						<div>
+							Вы можете обучаться и сдавать тесты в любое удобное для вас время.
+						</div>
 					</div>
 				</div>
 			</div>

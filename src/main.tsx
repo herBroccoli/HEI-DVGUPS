@@ -4,6 +4,7 @@ import App from './pages/AppPages/App.tsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Layout from './components/Layout.tsx'
+import LoginNext from './pages/Login/LoginPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,14 @@ const router = createBrowserRouter([
 	  {
 		path: '/about',
 		element: <h1>About</h1>
+	  },
+	  {
+		path: "/login",
+		element: <LoginNext/>,	
+	  },
+	  {
+		path: "/register",
+        element: <h1>Register</h1>
 	  }
 	]
   }

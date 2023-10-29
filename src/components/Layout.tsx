@@ -6,6 +6,7 @@ import loginImg from "../assets/icon/login.png";
 import supImg from "../assets/icon/supp.png";
 import locImg from "../assets/icon/loc.png"
 import emailImg from "../assets/icon/mail.png";
+import { LoginNext } from "../features/AuthHref";
 
 const Layout = () => {
 	return (
@@ -19,7 +20,7 @@ const Layout = () => {
 					</nav>
 
 					<div>
-						<button>Войти<img className="float-right ml-[10px]" src={loginImg} alt="login" /></button>
+						<button onClick={LoginNext}>Войти<img className="float-right ml-[10px]" src={loginImg} alt="login" /></button>
 					</div>
 				</header>
 			</div>
