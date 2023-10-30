@@ -1,16 +1,16 @@
-
 import "./button.css"
 
 type Props = {
 	text: string,
-	className: string|null,
+	className?: string,
 	fuc?: () => void,
+	myStyle?: boolean
 }
 
 
-const Button = ({ text, className, fuc }: Props) => {
+const Button = ({ text, className, fuc, myStyle }: Props) => {
 	return (
-		<button onClick={fuc} className={`btn ${className}`}>{text}</button>
+		<button onClick={fuc} className={myStyle ? className : `btn ${className}`}>{text}</button>
 	)
 }
 
