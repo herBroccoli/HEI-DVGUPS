@@ -2,11 +2,6 @@ import { useState } from "react"
 import Button from "../../UI/Button"
 import Eye from "../../UI/icon/Eye"
 
-
-type GETS = {
-	message?: string
-}
-
 const LoginNext = () => {
 
 
