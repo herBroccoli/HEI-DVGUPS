@@ -4,13 +4,14 @@ type Props = {
 	text: string,
 	className?: string,
 	fuc?: () => void,
-	myStyle?: boolean
+	myStyle?: boolean,
+	types?: "button" | "submit" | "reset";
 }
 
 
-const Button = ({ text, className, fuc, myStyle }: Props) => {
+const Button = ({ text, className, fuc, myStyle, types }: Props) => {
 	return (
-		<button onClick={fuc} className={myStyle ? className : `btn ${className}`}>{text}</button>
+		<button type={types} onClick={fuc} className={myStyle ? className : `btn ${className}`}>{text}</button>
 	)
 }
 

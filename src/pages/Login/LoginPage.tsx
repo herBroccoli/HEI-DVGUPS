@@ -1,14 +1,36 @@
 import { useState } from "react"
 import Button from "../../UI/Button"
 import Eye from "../../UI/icon/Eye"
+import axios from "axios"
+import Cookies from "js-cookie"
+import { Cookie, CookieOptions } from "../../features/cookieTypes"
 
 const LoginNext = () => {
 
 
 	const [showPassword, setShowPassword] = useState<boolean>(false)
+	const [login, setLogin] = useState<string>("")
+	const [password, setPassword] = useState<string>("")
 
 	const Login = (): void => {
 		setShowPassword(!showPassword)
+	}
+
+	const auth = (): void => {
+		/* if (login.trim() !== "") {
+			if (password.trim() !== "") {
+				axios.post("http://localhost:3000/api/login", 
+				{
+					userq: login,
+					password: password	
+				}
+				)
+			}
+		} */
+		const option : CookieOptions = {expires: 7}
+		Cookies.set('user', "broccoli", option)
+
+
 	}
 
 	return (
@@ -27,7 +49,7 @@ const LoginNext = () => {
 							</button>
 						</div>
 					</div>
-					<Button text="Войти" className="bg-[#4caf50] rounded text-white p-2" myStyle={true} />
+					<Button types={"button"} text="Войти" fuc={auth} className="bg-[#4caf50] rounded text-white p-2" myStyle={true} />
 				</form>
 			</div>
 		</>
