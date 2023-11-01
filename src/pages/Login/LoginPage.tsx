@@ -1,13 +1,25 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Button from "../../UI/Button"
 import Eye from "../../UI/icon/Eye"
 import axios from "axios"
-import Cookies from "js-cookie"
-import { Cookie, CookieOptions } from "../../features/cookieTypes"
-
+/* import Cookies from "js-cookie"
+import { CookieOptions } from "../../features/cookieTypes"
+ */
 const LoginNext = () => {
 
 
+
+	/* type LoginType = {
+		username: string,
+		password: string
+	} */
+
+	interface LoginType {
+		login?: string,
+        password?: string
+	}
+
+	const [data, setData] = useState<LoginType>({})
 	const [showPassword, setShowPassword] = useState<boolean>(false)
 	const [login, setLogin] = useState<string>("")
 	const [password, setPassword] = useState<string>("")
@@ -16,19 +28,27 @@ const LoginNext = () => {
 		setShowPassword(!showPassword)
 	}
 
+	useEffect(() => {
+		document.title = "ЛК | Авторизация"
+	}, [])
+
 	const auth = (): void => {
-		/* if (login.trim() !== "") {
+		if (login.trim() !== "") {
 			if (password.trim() !== "") {
-				axios.post("http://localhost:3000/api/login", 
+				axios.post("/posts/login", 
 				{
-					userq: login,
-					password: password	
+					"login": login,
+					"password": password	
 				}
 				)
+				.then(res => {
+					setData(res.data)
+					console.log(res.data)
+				})
 			}
-		} */
-		const option : CookieOptions = {expires: 7}
-		Cookies.set('user', "broccoli", option)
+		}
+		/* const option : CookieOptions = {expires: 7}
+		Cookies.set('user', "broccoli", option) */
 
 
 	}
@@ -37,13 +57,13 @@ const LoginNext = () => {
 		<>
 			<h1 className="text-[2rem]">Личный кабинет</h1>
 			<h2 className="text-[1.5rem]">Абитуриента, Студента и Работника ДВГУПС</h2>
-
+			{`${data.login}...${data.password}`}
 			<div className="w-full flex justify-center mt-[40px]">
 				<form action="$" className="1 shadow w-[550px] p-6 rounded-xl flex flex-col space-y-4">
 					<div className="space-y-4 flex flex-col">
-						<input type="text" name="login" id="login" className="border rounded text-[17px] p-1" placeholder="Логин" />
+						<input type="text" name="login" id="login" value={login} onChange={event => setLogin(event.target.value)} className="border rounded text-[17px] p-1" placeholder="Логин" />
 						<div className="flex">
-							<input type={showPassword ? "text" : "password"} name="password" id="password" className="border rounded w-full text-[17px] p-1" placeholder="Пароль" />
+							<input type={showPassword ? "text" : "password"} name="password" id="password" value={password} onChange={event=>setPassword(event.target.value)} className="border rounded w-full text-[17px] p-1" placeholder="Пароль" />
 							<button className="ml-[5px]"  type="button" onClick={Login}>
 								<Eye />
 							</button>
