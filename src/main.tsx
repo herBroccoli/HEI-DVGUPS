@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './pages/AppPages/App.tsx'
+import App from '@/pages/AppPages/App.tsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import Layout from './components/Layout.tsx'
-import LoginNext from './pages/Login/LoginPage.tsx'
+import Layout from '@/components/Layout.tsx'
+import LoginNext from '@/pages/Login/LoginPage.tsx'
 
 const router = createBrowserRouter([
   {
